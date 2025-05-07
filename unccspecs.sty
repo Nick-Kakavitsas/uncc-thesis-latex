@@ -459,7 +459,7 @@ ALL RIGHTS RESERVED
 	\abstractname\\
 	\vspace{\baselineskip}
 	\vspace{\baselineskip}
-	\MakeUppercase{\callauthor}. \calltitle. (Under the direction of \MakeUppercase{\calladvisor})
+	\MakeUppercase{\callauthor}. \calltitle. (Under the direction of \\ \MakeUppercase{\calladvisor})
 %        \bfseries \abstractname
         \@endparpenalty\@M
 %	\vspace{\baselineskip}
@@ -561,11 +561,15 @@ ALL RIGHTS RESERVED
 % A tocdepth of 1 means it will only show chapters and sections.
 % You can increase it if you want your Table of Contents to show 
 % subsections (tocdepth = 2) or subsubsections (tocdepth = 3) as well.
+
+
 \setcounter{tocdepth}{2}
 
 % Increase the section number depth and the toc depth (the depth ofsections which get numbered
 % and put in the table of contents). This is necessary to allow thenew titleclasses to be
 % numbered correctly and put in the toc.
+
+
 \setcounter{secnumdepth}{5}
 
 % The following commands format the table of contents (from titletoc package).
@@ -574,6 +578,8 @@ ALL RIGHTS RESERVED
 % in order to get the correct name for appendix chapters. References still
 % comes out correctly because \addcontentsline{toc}{chapter}{\bibname} was
 % used for putting the title `REFERENCES' in the toc.
+
+
 \titlecontents{chapter}[0pt]{\normalfont\mdseries}
 {\MakeUppercase{\chaptertitlename} \thecontentslabel :\hspace{.25em}}
 {}{\titlerule*[1pc]{}\contentspage}
@@ -593,11 +599,17 @@ ALL RIGHTS RESERVED
 \titlecontents{subsubsubsection}[16em]{}{\contentslabel{4em}}{}
 {\titlerule*[1pc]{.}\contentspage}
 
+% \newcommand{\uncctocformat}[4]{
+%   \titlecontents{#1}[#2]{\normalfont\mdseries\singlespacing}
+%   {\hspace*{2em}\begin{tabular}[t]{@{}p{#3}}\hspace*{-2em}#4}
+%   {\hspace*{2em}\begin{tabular}[t]{@{}p{#3}}\hspace*{-2em}}
+%   {\end{tabular}\hfill\contentspage}
+% }
 \newcommand{\uncctocformat}[4]{
   \titlecontents{#1}[#2]{\normalfont\mdseries\singlespacing}
-  {\hspace*{2em}\begin{tabular}[t]{@{}p{#3}}\hspace*{-2em}#4}
-  {\hspace*{2em}\begin{tabular}[t]{@{}p{#3}}\hspace*{-2em}}
-  {\end{tabular}\hfill\contentspage}
+  {#4}
+  {}
+  {\hfill\contentspage}
 }
 
 % TOC formatting for chapter, section levels
@@ -897,4 +909,6 @@ ALL RIGHTS RESERVED
 	\end{singlespace}
       \end{center}}%
      {\par\vfil\null\newpage}
+
+
 
